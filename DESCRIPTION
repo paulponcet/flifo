@@ -1,0 +1,19 @@
+Package: flifo
+Type: Package
+Title: Don't get stuck with stacks in R
+Version: 0.1.0
+Date: 2016-12-01
+Authors@R: person("Paul", "Poncet", , "paulponcet@yahoo.fr", role = c("aut", "cre"))
+Description: The flifo package provides functions to create and manipulate 
+    FIFO (First In First Out), LIFO (Last In First Out), and NINO (Not In or Never Out) 
+    stacks in R.
+License: MIT + file LICENSE
+LazyData: TRUE
+Depends:
+    R (>= 3.0.3), 
+    base2
+Suggests:
+    testthat
+URL: https://github.com/paulponcet/flifo
+BugReports: https://github.com/paulponcet/flifo/issues
+RoxygenNote: 5.0.1
