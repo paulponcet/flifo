@@ -29,6 +29,9 @@ function(x,
   if (base2::is.empty(x)) {
     cat(tx, "stack is empty\n")
     
+  } else if (is.nino(x)) {
+    cat(tx, "stack: no element can be reached\n")
+    
   } else {
     cat(tx, "stack: next reachable element is:\n")
     print(as.list(x)[[1L]], ...)
