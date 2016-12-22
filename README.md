@@ -23,7 +23,7 @@ create empty stacks. For instance:
 library(flifo)
 
 # Create an empty LIFO
-s <- lifo(max_size = 3)
+s <- lifo()
 print(s)
 
 is.empty(s) # TRUE
@@ -47,7 +47,11 @@ pop(s) # get the last element inserted
 A maximum number of elements can be specified at the creation of the stack (no limit in the number of elements is the default). 
 
 ```R
-s <- fifo(max_size = 2)
+s <- fifo(max_size = 3)
+max_size(s)
+
+# max_size can be changed
+max_size(s) <- 2
 push(s, 1)
 push(s, 2)
 push(s, 3) # generates an error (the stack is full)
