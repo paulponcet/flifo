@@ -50,42 +50,6 @@ function(x)
 }
 
 
-# #' @export
-# #' @rdname fifo
-# #' 
-# as.fifo <- 
-# function(x)
-# {
-#   x <- as.list(x)
-#   class(x) <- c("fifo", "stack")
-#   x
-# }
-
-
-# #' @export
-# #' @rdname fifo
-# #' 
-# as.lifo <- 
-# function(x)
-# {
-#   x <- as.list(x)
-#   class(x) <- c("lifo", "stack")
-#   x
-# }
-
-
-# #' @export
-# #' @rdname fifo
-# #' 
-# as.lifo <- 
-# function(x)
-# {
-#   x <- as.list(x)
-#   class(x) <- c("nino", "stack")
-#   x
-# }
-
-
 #' @export 
 #' @rdname fifo
 #' 
