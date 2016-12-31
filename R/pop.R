@@ -22,7 +22,7 @@
 #' @export
 #' 
 #' @examples 
-#' (s <- lifo(max_size = 3)) # empty LIFO
+#' (s <- lifo(max_height = 3)) # empty LIFO
 #' (push(s, 0.3)) #
 #' (push(s, data.frame(x=1:2, y=2:3))) 
 #' obj <- pop(s) # get the last element inserted
@@ -39,15 +39,20 @@ function(.stack)
   if (base2::is.empty(.stack)) stop("'.stack' is empty")
   
   cl <- class(.stack)
-  si <- size(.stack)
+  
+  mh <- max_height(.stack)
+  si <- sizes(.stack)
   ms <- max_size(.stack)
   
   .stack <- as.list(.stack)
   x <- .stack[[1L]]
   .stack <- .stack[-1L]
   class(.stack) <- cl
-  size(.stack) <- si - 1L
-  attr(.stack, "max_size") <- ms
+  
+  max_height(.stack) <- mh
+  sizes(.stack) <- si[-1L]
+  max_size(.stack) <- ms
+  
   assign(s, .stack, envir = env)
   x
 }

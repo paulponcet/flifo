@@ -2,7 +2,7 @@
 #' Size of a stack
 #' 
 #' @description 
-#' The function \code{size} returns the size of a stack. 
+#' The function \code{size} returns the size of a stack, in bytes. 
 #' The function \code{max_size} returns the maximum number 
 #' of objects a stack can contains; this number can be changed 
 #' with \code{max_size<-}. 
@@ -17,7 +17,7 @@
 #' numeric. The new maximum size of the stack. 
 #' 
 #' @return 
-#' \code{size} always returns a nonnegative integer. 
+#' \code{size} always returns a nonnegative numeric.  
 #' \code{max_size} returns a (possibly infinite) nonnegative numeric. 
 #' 
 #' @export
@@ -25,16 +25,24 @@
 size <- 
 function(.stack)
 {
-  attr(.stack, "size")
+  sum(sizes(.stack))
 }
 
 
 # not exported, since the size should be modified directly
-"size<-" <-
+sizes <- 
+function(.stack)
+{
+  attr(.stack, "sizes")
+}
+
+
+# not exported, since the size should be modified directly
+"sizes<-" <-
 function(x, 
          value)
 {
-  attr(x, "size") <- value
+  attr(x, "sizes") <- value
   x
 }
 

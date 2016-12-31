@@ -21,19 +21,22 @@ is.nino(x)
 
 \method{as.list}{stack}(x, ...)
 
-fifo(max_size = Inf)
+fifo(max_height = Inf, max_size = Inf)
 
-lifo(max_size = Inf)
+lifo(max_height = Inf, max_size = Inf)
 
-nino(max_size = Inf)
+nino(max_height = Inf, max_size = Inf)
 }
 \arguments{
 \item{x}{An object to be tested or coerced.}
 
 \item{...}{Additional arguments.}
 
-\item{max_size}{numeric. The maximum (possibly infinite) number of objects 
+\item{max_height}{numeric. The maximum (infinite by default) number of objects 
 the stack can contain.}
+
+\item{max_size}{numeric. The maximum (infinite by default) size of
+the stack, in octets.}
 }
 \value{
 \code{is.xxx} functions return a logical. 
@@ -47,6 +50,7 @@ create 'First In First Out',  'Last In First Out', and
 'Not In or Never Out' stacks, respectively.
 }
 \seealso{
-\code{\link[flifo]{push}}, \code{\link[flifo]{pop}}.
+\code{\link[flifo]{push}}, 
+\code{\link[flifo]{pop}}.
 }
 

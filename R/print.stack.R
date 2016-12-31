@@ -34,6 +34,7 @@ function(x,
     
   } else {
     cat(tx, "stack: next reachable element is:\n")
+    cat("\n")
     print(as.list(x)[[1L]], ...)
   }
   invisible(x)

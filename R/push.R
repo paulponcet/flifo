@@ -24,10 +24,11 @@
 #' @seealso 
 #' \code{\link[flifo]{pop}}. 
 #' 
+#' @importFrom pryr object_size
 #' @export
 #' 
 #' @examples 
-#' (s <- lifo(max_size = 3)) # empty LIFO
+#' (s <- lifo(max_height = 3)) # empty LIFO
 #' (push(s, 0.3)) #
 #' (push(s, data.frame(x=1:2, y=2:3))) 
 #' obj <- pop(s) # get the last element inserted
@@ -45,21 +46,25 @@ function(.stack,
   nx <- deparse(substitute(x))
 
   cl <- class(.stack)
-  si <- size(.stack)
+  size_of_x <- as.numeric(pryr::object_size(x))
+  mh <- max_height(.stack)
+  si <- sizes(.stack)
   ms <- max_size(.stack)
-  if (si+1L > ms) stop("'.stack' is full")
+  if (height(.stack)+1L > mh || sum(si)+size_of_x > ms) stop("'.stack' is full")
   
   ## Update '.stack'
   if (is.fifo(.stack)) {
     .stack <- c(.stack, list(x))
+    sizes(.stack) <- c(si, size_of_x)
   } else if (is.lifo(.stack)) {
     .stack <- c(list(x), .stack)
+    sizes(.stack) <- c(size_of_x, si)
   } else if (is.nino(.stack)) {
-    # do nothing
+    sizes(.stack) <- c(size_of_x, si)
   }
   class(.stack) <- cl
-  size(.stack) <- si + 1L
-  attr(.stack, "max_size") <- ms
+  max_height(.stack) <- mh
+  max_size(.stack) <- ms
   assign(s, .stack, envir = env)
 
   ## Remove 'x' from the calling environment

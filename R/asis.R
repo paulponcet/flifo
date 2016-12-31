@@ -6,15 +6,19 @@
 is.stack <-
 function(x)
 {
-  si <- attr(x, "size")
+  mh <- attr(x, "max_height")
+  si <- attr(x, "sizes")
   ms <- attr(x, "max_size")
   
-  !is.null(si) && 
-    is.integer(si) &&
-    si >= 0L && 
-    !is.null(ms) &&
-    (base2::is.wholenumber(ms) || is.infinite(ms)) &&
-    ms >= 0L &&
+  !is.null(mh) && 
+    (base2::is.wholenumber(mh) || is.infinite(mh)) &&
+    !is.null(si) && 
+    is.numeric(si) &&
+    all(si >= 0) && 
+    mh >= length(si) - 1L && 
+    !is.null(ms) && 
+    is.numeric(ms) && 
+    ms >= sum(si) && 
     is.list(x) && 
     inherits(x, "stack")
 }

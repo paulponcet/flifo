@@ -2,6 +2,8 @@
 
 [![Travis-CI Build Status](https://travis-ci.org/paulponcet/flifo.svg?branch=master)](https://travis-ci.org/paulponcet/flifo)
 
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/flifo)](http://cran.r-project.org/package=flifo)
+
 The flifo package provides a few functions to create and manipulate FIFO (First In First Out), LIFO (Last In First Out), and NINO (Not In or Never Out) stacks in R.
 
 
@@ -39,9 +41,10 @@ elements from the stack, respectively.
 push(s, 0.3)
 push(s, data.frame(x=1:2, y=2:3))
 print(s)
-size(s)
+size(s)# in bytes
 
 pop(s) # get the last element inserted
+size(s)
 ```
 
 A maximum number of elements can be specified at the creation of the stack (no limit in the number of elements is the default). 

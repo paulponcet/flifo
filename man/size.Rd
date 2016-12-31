@@ -20,11 +20,11 @@ max_size(x) <- value
 \item{value}{numeric. The new maximum size of the stack.}
 }
 \value{
-\code{size} always returns a nonnegative integer. 
+\code{size} always returns a nonnegative numeric.  
 \code{max_size} returns a (possibly infinite) nonnegative numeric.
 }
 \description{
-The function \code{size} returns the size of a stack. 
+The function \code{size} returns the size of a stack, in bytes. 
 The function \code{max_size} returns the maximum number 
 of objects a stack can contains; this number can be changed 
 with \code{max_size<-}.
