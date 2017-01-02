@@ -6,7 +6,7 @@
 #' create 'First In First Out',  'Last In First Out', and 
 #' 'Not In or Never Out' stacks, respectively. 
 #' 
-#' @param max_height
+#' @param max_length
 #' numeric. The maximum (infinite by default) number of objects 
 #' the stack can contain. 
 #' 
@@ -33,13 +33,13 @@
 #' @export
 #' 
 fifo <- 
-function(max_height = Inf, 
+function(max_length = Inf, 
          max_size = Inf)
 {
   x <- list()
   class(x) <- c("fifo", "stack")
   attr(x, "sizes") <- 0
-  attr(x, "max_height") <- max_height
+  attr(x, "max_length") <- max_length
   attr(x, "max_size") <- max_size
   x
 }
@@ -48,13 +48,13 @@ function(max_height = Inf,
 #' @rdname fifo
 #' 
 lifo <- 
-function(max_height = Inf, 
+function(max_length = Inf, 
          max_size = Inf)
 {
   x <- list()
   class(x) <- c("lifo", "stack")
   attr(x, "sizes") <- 0
-  attr(x, "max_height") <- max_height
+  attr(x, "max_length") <- max_length
   attr(x, "max_size") <- max_size
   x
 }
@@ -64,13 +64,13 @@ function(max_height = Inf,
 #' @rdname fifo
 #' 
 nino <- 
-function(max_height = Inf, 
+function(max_length = Inf, 
          max_size = Inf)
 {
   x <- list()
   class(x) <- c("nino", "stack")
   attr(x, "sizes") <- 0
-  attr(x, "max_height") <- max_height
+  attr(x, "max_length") <- max_length
   attr(x, "max_size") <- max_size
   x
 }

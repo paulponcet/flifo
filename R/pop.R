@@ -22,7 +22,7 @@
 #' @export
 #' 
 #' @examples 
-#' (s <- lifo(max_height = 3)) # empty LIFO
+#' (s <- lifo(max_length = 3)) # empty LIFO
 #' (push(s, 0.3)) #
 #' (push(s, data.frame(x=1:2, y=2:3))) 
 #' obj <- pop(s) # get the last element inserted
@@ -40,7 +40,7 @@ function(.stack)
   
   cl <- class(.stack)
   
-  mh <- max_height(.stack)
+  ml <- max_length(.stack)
   si <- sizes(.stack)
   ms <- max_size(.stack)
   
@@ -49,7 +49,7 @@ function(.stack)
   .stack <- .stack[-1L]
   class(.stack) <- cl
   
-  max_height(.stack) <- mh
+  max_length(.stack) <- ml
   sizes(.stack) <- si[-1L]
   max_size(.stack) <- ms
   

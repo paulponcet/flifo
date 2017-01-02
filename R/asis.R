@@ -6,16 +6,16 @@
 is.stack <-
 function(x)
 {
-  mh <- attr(x, "max_height")
+  ml <- attr(x, "max_length")
   si <- attr(x, "sizes")
   ms <- attr(x, "max_size")
   
-  !is.null(mh) && 
-    (base2::is.wholenumber(mh) || is.infinite(mh)) &&
+  !is.null(ml) && 
+    (base2::is.wholenumber(ml) || is.infinite(ml)) &&
     !is.null(si) && 
     is.numeric(si) &&
     all(si >= 0) && 
-    mh >= length(si) - 1L && 
+    ml >= length(si) - 1L && 
     !is.null(ms) && 
     is.numeric(ms) && 
     ms >= sum(si) && 

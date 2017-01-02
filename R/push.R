@@ -28,7 +28,7 @@
 #' @export
 #' 
 #' @examples 
-#' (s <- lifo(max_height = 3)) # empty LIFO
+#' (s <- lifo(max_length = 3)) # empty LIFO
 #' (push(s, 0.3)) #
 #' (push(s, data.frame(x=1:2, y=2:3))) 
 #' obj <- pop(s) # get the last element inserted
@@ -47,10 +47,10 @@ function(.stack,
 
   cl <- class(.stack)
   size_of_x <- as.numeric(pryr::object_size(x))
-  mh <- max_height(.stack)
+  ml <- max_length(.stack)
   si <- sizes(.stack)
   ms <- max_size(.stack)
-  if (height(.stack)+1L > mh || sum(si)+size_of_x > ms) stop("'.stack' is full")
+  if (length(.stack)+1L > ml || sum(si)+size_of_x > ms) stop("'.stack' is full")
   
   ## Update '.stack'
   if (is.fifo(.stack)) {
@@ -63,7 +63,7 @@ function(.stack,
     sizes(.stack) <- c(size_of_x, si)
   }
   class(.stack) <- cl
-  max_height(.stack) <- mh
+  max_length(.stack) <- ml
   max_size(.stack) <- ms
   assign(s, .stack, envir = env)
 

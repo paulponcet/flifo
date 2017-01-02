@@ -46,12 +46,12 @@ size(s)
 A maximum number of elements can be specified at the creation of the stack (no limit in the number of elements is the default). 
 
 ```{r, eval=FALSE}
-s <- fifo(max_height = 3)
-max_height(s)
+s <- fifo(max_length = 3)
+max_length(s)
 #> [1] 3
 
-# max_height can be changed
-max_height(s) <- 2
+# max_length can be changed
+max_length(s) <- 2
 push(s, 1)
 push(s, 2)
 push(s, 3) # generates an error

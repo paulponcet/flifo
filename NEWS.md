@@ -1,3 +1,8 @@
+# flifo 0.1.3
+
+* Changed 'max_height' for 'max_length'
+
+
 # flifo 0.1.2
 
 * Every stack now has a 'max_height' and a 'max_size' attributes. 

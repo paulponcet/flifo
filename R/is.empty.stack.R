@@ -19,5 +19,5 @@ is.empty.stack <-
 function(x)
 {
   stopifnot(is.stack(x))
-  height(x) == 0L
+  length(x) == 0L
 }

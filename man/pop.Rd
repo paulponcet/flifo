@@ -22,7 +22,7 @@ The \code{pop} function is not pure. Side effect is that
 \code{.stack} is modified in the calling environment.
 }
 \examples{
-(s <- lifo(max_height = 3)) # empty LIFO
+(s <- lifo(max_length = 3)) # empty LIFO
 (push(s, 0.3)) #
 (push(s, data.frame(x=1:2, y=2:3))) 
 obj <- pop(s) # get the last element inserted

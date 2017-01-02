@@ -21,18 +21,18 @@ is.nino(x)
 
 \method{as.list}{stack}(x, ...)
 
-fifo(max_height = Inf, max_size = Inf)
+fifo(max_length = Inf, max_size = Inf)
 
-lifo(max_height = Inf, max_size = Inf)
+lifo(max_length = Inf, max_size = Inf)
 
-nino(max_height = Inf, max_size = Inf)
+nino(max_length = Inf, max_size = Inf)
 }
 \arguments{
 \item{x}{An object to be tested or coerced.}
 
 \item{...}{Additional arguments.}
 
-\item{max_height}{numeric. The maximum (infinite by default) number of objects 
+\item{max_length}{numeric. The maximum (infinite by default) number of objects 
 the stack can contain.}
 
 \item{max_size}{numeric. The maximum (infinite by default) size of

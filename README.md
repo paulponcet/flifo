@@ -1,4 +1,4 @@
-# flifo: don't get stuck with stacks in R
+# flifo: Don't get stuck with stacks in R
 
 [![Travis-CI Build Status](https://travis-ci.org/paulponcet/flifo.svg?branch=master)](https://travis-ci.org/paulponcet/flifo)
 
