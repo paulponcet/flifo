@@ -36,7 +36,7 @@ function(.stack)
 
   if (!is.stack(.stack)) stop("'.stack' must be a stack")
   if (is.nino(.stack)) stop("cannot retrieve elements from a 'nino' stack")
-  if (base2::is.empty(.stack)) stop("'.stack' is empty")
+  if (is.empty(.stack)) stop("'.stack' is empty")
   
   cl <- class(.stack)
   

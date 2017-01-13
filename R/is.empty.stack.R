@@ -10,8 +10,8 @@
 #' @return 
 #' A logical, \code{TRUE} if \code{x} is empty. 
 #' 
-#' @seealso The generic function \code{\link[base2]{is.empty}} 
-#' in package \pkg{base2}. 
+#' @seealso The generic function \code{\link[bazar]{is.empty}} 
+#' in package \pkg{bazar}. 
 #' 
 #' @export
 #' 
@@ -21,3 +21,9 @@ function(x)
   stopifnot(is.stack(x))
   length(x) == 0L
 }
+
+
+#' @importFrom bazar is.empty
+#' @export
+#' 
+bazar::is.empty

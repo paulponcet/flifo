@@ -16,7 +16,7 @@ A logical, \code{TRUE} if \code{x} is empty.
 This method tests if a stack \code{x} is empty.
 }
 \seealso{
-The generic function \code{\link[base2]{is.empty}} 
-in package \pkg{base2}.
+The generic function \code{\link[bazar]{is.empty}} 
+in package \pkg{bazar}.
 }
 

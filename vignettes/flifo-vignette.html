@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="date" content="2016-12-23" />
+<meta name="date" content="2017-01-02" />
 
 <title>The flifo package</title>
 
@@ -68,49 +68,69 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 <h1 class="title toc-ignore">The flifo package</h1>
-<h4 class="date"><em>2016-12-23</em></h4>
+<h4 class="date"><em>2017-01-02</em></h4>
 
 
 
 <p>The flifo package provides a few functions to create and manipulate FIFO (First In First Out), LIFO (Last In First Out), and NINO (Not In or Never Out) stacks in R.</p>
 <p>Functions <code>fifo</code>, <code>lifo</code>, and <code>nino</code> are made to create empty stacks. For instance:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(flifo)
-
-<span class="co"># Create an empty LIFO</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create an empty LIFO</span>
 s &lt;-<span class="st"> </span><span class="kw">lifo</span>()
 <span class="kw">print</span>(s)
+<span class="co">#&gt; LIFO stack is empty</span>
 
-<span class="kw">is.empty</span>(s) <span class="co"># TRUE</span>
-<span class="kw">is.fifo</span>(s)  <span class="co"># FALSE</span>
-<span class="kw">is.lifo</span>(s)  <span class="co"># TRUE</span></code></pre></div>
+<span class="kw">is.empty</span>(s)
+<span class="co">#&gt; [1] TRUE</span>
+<span class="kw">is.fifo</span>(s)
+<span class="co">#&gt; [1] FALSE</span>
+<span class="kw">is.lifo</span>(s)
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
 <p>Then <code>push</code> and <code>pop</code> enable one to add elements to and retrieve elements from the stack, respectively.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Add values to 's'</span>
 <span class="kw">push</span>(s, <span class="fl">0.3</span>)
 <span class="kw">push</span>(s, <span class="kw">data.frame</span>(<span class="dt">x=</span><span class="dv">1</span>:<span class="dv">2</span>, <span class="dt">y=</span><span class="dv">2</span>:<span class="dv">3</span>))
 <span class="kw">print</span>(s)
+<span class="co">#&gt; LIFO stack: next reachable element is:</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;   x y</span>
+<span class="co">#&gt; 1 1 2</span>
+<span class="co">#&gt; 2 2 3</span>
+<span class="kw">size</span>(s)<span class="co"># in bytes</span>
+<span class="co">#&gt; [1] 840</span>
+
+<span class="co"># Retrive the last element inserted</span>
+<span class="kw">pop</span>(s)
+<span class="co">#&gt;   x y</span>
+<span class="co">#&gt; 1 1 2</span>
+<span class="co">#&gt; 2 2 3</span>
 <span class="kw">size</span>(s)
-
-<span class="kw">pop</span>(s) <span class="co"># get the last element inserted</span></code></pre></div>
+<span class="co">#&gt; [1] 48</span></code></pre></div>
 <p>A maximum number of elements can be specified at the creation of the stack (no limit in the number of elements is the default).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">s &lt;-<span class="st"> </span><span class="kw">fifo</span>(<span class="dt">max_size =</span> <span class="dv">3</span>)
-<span class="kw">max_size</span>(s)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">s &lt;-<span class="st"> </span><span class="kw">fifo</span>(<span class="dt">max_length =</span> <span class="dv">3</span>)
+<span class="kw">max_length</span>(s)
+<span class="co">#&gt; [1] 3</span>
 
-<span class="co"># max_size can be changed</span>
-<span class="kw">max_size</span>(s) &lt;-<span class="st"> </span><span class="dv">2</span>
+<span class="co"># max_length can be changed</span>
+<span class="kw">max_length</span>(s) &lt;-<span class="st"> </span><span class="dv">2</span>
 <span class="kw">push</span>(s, <span class="dv">1</span>)
 <span class="kw">push</span>(s, <span class="dv">2</span>)
-<span class="kw">push</span>(s, <span class="dv">3</span>) <span class="co"># generates an error (the stack is full)</span></code></pre></div>
+<span class="kw">push</span>(s, <span class="dv">3</span>) <span class="co"># generates an error</span>
+<span class="co">#&gt; Error in push(s, 3) : '.stack' is full</span></code></pre></div>
 <p>If an object exists in the current environment <code>e</code> and is pushed into the stack, it disappears from <code>e</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">s &lt;-<span class="st"> </span><span class="kw">lifo</span>()
 x &lt;-<span class="st"> </span><span class="fl">3.14</span>
-<span class="kw">exists</span>(<span class="st">&quot;x&quot;</span>) <span class="co"># TRUE</span>
+<span class="kw">exists</span>(<span class="st">&quot;x&quot;</span>)
+<span class="co">#&gt; [1] TRUE</span>
 <span class="kw">push</span>(s, x)
-<span class="kw">exists</span>(<span class="st">&quot;x&quot;</span>) <span class="co"># FALSE</span></code></pre></div>
-<p>The <code>nino</code> function creates a stack from which we cannot not retrieve anything:</p>
+<span class="kw">exists</span>(<span class="st">&quot;x&quot;</span>)
+<span class="co">#&gt; [1] FALSE</span></code></pre></div>
+<p>The <code>nino</code> function creates a stack from which we cannot retrieve anything:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">s &lt;-<span class="st"> </span><span class="kw">nino</span>()
 <span class="kw">push</span>(s, <span class="st">&quot;foo&quot;</span>)
 <span class="kw">print</span>(s)
-<span class="kw">pop</span>(s) <span class="co"># generates an error</span></code></pre></div>
+<span class="co">#&gt; NINO stack: no element can be reached</span>
+<span class="kw">pop</span>(s) <span class="co"># generates an error</span>
+<span class="co">#&gt; Error in pop(s) : cannont retrieve elements from a 'nino' stack</span></code></pre></div>
 
 
 

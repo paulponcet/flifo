@@ -1,3 +1,8 @@
+# flifo 0.1.4
+
+* Imports 'bazar' instead of 'base2'
+
+
 # flifo 0.1.3
 
 * Changed 'max_height' for 'max_length'

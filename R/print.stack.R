@@ -18,7 +18,6 @@
 #' @seealso 
 #' \code{\link[flifo]{push}}, \code{\link[flifo]{pop}}. 
 #' 
-#' @importFrom base2 is.empty
 #' @export
 #' 
 print.stack <-
@@ -26,7 +25,7 @@ function(x,
          ...)
 {
   tx <- toupper(class(x)[[1L]])
-  if (base2::is.empty(x)) {
+  if (is.empty(x)) {
     cat(tx, "stack is empty\n")
     
   } else if (is.nino(x)) {

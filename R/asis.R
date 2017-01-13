@@ -1,5 +1,5 @@
 
-#' @importFrom base2 is.wholenumber
+#' @importFrom bazar is.wholenumber
 #' @export
 #' @rdname fifo
 #' 
@@ -11,7 +11,7 @@ function(x)
   ms <- attr(x, "max_size")
   
   !is.null(ml) && 
-    (base2::is.wholenumber(ml) || is.infinite(ml)) &&
+    (bazar::is.wholenumber(ml) || is.infinite(ml)) &&
     !is.null(si) && 
     is.numeric(si) &&
     all(si >= 0) && 
