@@ -1,6 +1,7 @@
 # flifo 0.1.4
 
 * Imports 'bazar' instead of 'base2'
+* The length of a NINO stack was not correct. 
 
 
 # flifo 0.1.3

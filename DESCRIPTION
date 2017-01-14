@@ -2,7 +2,7 @@ Package: flifo
 Type: Package
 Title: Don't Get Stuck with Stacks in R
 Version: 0.1.4
-Date: 2017-01-03
+Date: 2017-01-14
 Authors@R: person("Paul", "Poncet", , "paulponcet@yahoo.fr", role = c("aut", "cre"))
 Description: Functions to create and manipulate 
     FIFO (First In First Out), LIFO (Last In First Out), and NINO (Not In or Never Out) 

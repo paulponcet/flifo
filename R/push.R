@@ -60,6 +60,7 @@ function(.stack,
     .stack <- c(list(x), .stack)
     sizes(.stack) <- c(size_of_x, si)
   } else if (is.nino(.stack)) {
+    .stack <- c(list(c()), .stack)
     sizes(.stack) <- c(size_of_x, si)
   }
   class(.stack) <- cl
