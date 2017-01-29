@@ -1,6 +1,6 @@
 # flifo: Don't get stuck with stacks in R
 
-[![Travis-CI Build Status](https://travis-ci.org/paulponcet/flifo.svg?branch=master)](https://travis-ci.org/paulponcet/flifo)
+[![Travis-CI Build Status](https://travis-ci.org/paulponcet/flifo.svg?branch=master)](https://travis-ci.org/paulponcet/flifo) [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/flifo)](https://cran.r-project.org/package=flifo) [![](https://cranlogs.r-pkg.org/badges/flifo)](https://cran.r-project.org/package=flifo)
 
 The flifo package provides a few functions to create and manipulate FIFO (First In First Out), LIFO (Last In First Out), and NINO (Not In or Never Out) stacks in R.
 
