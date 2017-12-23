@@ -16,4 +16,3 @@ and NINO (Not In or Never Out) stacks in R, most notably:
   \item \code{\link{pop}} to retrieve an object from a stack. 
 }
 }
-

@@ -23,4 +23,3 @@ The function \code{max_length} returns the maximum number
 of objects a stack can contains; this number can be changed 
 with \code{max_length<-}.
 }
-

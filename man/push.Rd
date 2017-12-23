@@ -35,4 +35,3 @@ obj <- pop(s) # get the last element inserted
 \seealso{
 \code{\link[flifo]{pop}}.
 }
-

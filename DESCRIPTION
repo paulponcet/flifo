@@ -20,4 +20,4 @@ Suggests:
     testthat
 URL: https://github.com/paulponcet/flifo
 BugReports: https://github.com/paulponcet/flifo/issues
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

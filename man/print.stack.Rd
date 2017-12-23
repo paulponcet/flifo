@@ -22,4 +22,3 @@ its next reachable object.
 \seealso{
 \code{\link[flifo]{push}}, \code{\link[flifo]{pop}}.
 }
-

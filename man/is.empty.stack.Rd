@@ -19,4 +19,3 @@ This method tests if a stack \code{x} is empty.
 The generic function \code{\link[bazar]{is.empty}} 
 in package \pkg{bazar}.
 }
-
