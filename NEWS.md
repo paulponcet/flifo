@@ -1,3 +1,8 @@
+# flifo 0.1.5
+
+* 'push()' and 'pop()' can now be called within functions (#1). 
+
+
 # flifo 0.1.4
 
 * Imports 'bazar' instead of 'base2'

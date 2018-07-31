@@ -66,10 +66,12 @@ function(.stack,
   class(.stack) <- cl
   max_length(.stack) <- ml
   max_size(.stack) <- ms
-  assign(s, .stack, envir = env)
+  assign(s, .stack, envir = env, inherits = TRUE)
 
   ## Remove 'x' from the calling environment
-  if (exists(nx, envir = env)) rm(list = nx, envir = env)
+  if (exists(nx, envir = env, inherits = TRUE)) {
+    rm(list = nx, envir = env, inherits = TRUE)
+  }
   
   invisible(NULL)
 }

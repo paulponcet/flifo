@@ -54,11 +54,11 @@ function(x)
 }
 
 
-#' @export 
+#' @export
 #' @rdname fifo
-#' 
-as.list.stack <- 
-function(x, 
+#'
+as.list.stack <-
+function(x,
          ...)
 {
   unclass(x)

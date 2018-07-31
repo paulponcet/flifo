@@ -53,6 +53,6 @@ function(.stack)
   sizes(.stack) <- si[-1L]
   max_size(.stack) <- ms
   
-  assign(s, .stack, envir = env)
+  assign(s, .stack, envir = env, inherits = TRUE)
   x
 }
