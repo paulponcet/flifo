@@ -32,7 +32,9 @@ function(.stack)
 {
   s <- deparse(substitute(.stack))
   env <- parent.frame()
-  if (!exists(s, envir = env)) stop("'.stack' does not exist in the calling environment")
+  if (!exists(s, envir = env)) {
+    stop("'.stack' does not exist in the calling environment")
+  }
 
   if (!is.stack(.stack)) stop("'.stack' must be a stack")
   if (is.nino(.stack)) stop("cannot retrieve elements from a 'nino' stack")
